@@ -32,6 +32,7 @@ class AddTodo extends React.Component {
 	onAdd() {
 		let text = this.input.value;
 		this.props.add(text);
+		this.input.value = '';
 	}
 	refInput(node) {
 		this.input = node;
@@ -52,7 +53,7 @@ class TodoList extends React.Component {
 		const { toggle, remove } = this.props
 		for (let i=0; i < this.props.todos.length; i++) {
 			let item = this.props.todos[i]
-			todos.push(<TodoItem id={item.id} name={item.name} completed={item.completed} toggle={toggle} remove={remove}/>)
+			todos.push(<TodoItem key={item.id} id={item.id} text={item.text} completed={item.completed} toggle={toggle} remove={remove}/>)
 		}
 		return (<div>
 			<ul>{ todos }</ul>

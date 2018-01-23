@@ -1,5 +1,3 @@
-export const ActionTypes = {
-	ADD_TODO: 'TODO/ADD',
-	TOGGLE_TODO: 'TODO/TOGGLE',
-	REMOVE_TODO: 'TODO/REMOVE',
-};
+export const ADD_TODO = 'TODO/ADD';
+export const TOGGLE_TODO = 'TODO/TOGGLE';
+export const REMOVE_TODO = 'TODO/REMOVE';
