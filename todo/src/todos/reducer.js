@@ -1,6 +1,6 @@
 import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from './actionTypes.js'
 
-function todosReducer(state = [], action) {
+function reducer(state = [], action) {
 	switch (action.type) {
 	case ADD_TODO:
 		return [
@@ -16,7 +16,7 @@ function todosReducer(state = [], action) {
 			}
 		});
 	case REMOVE_TODO:
-		new_state = []
+		var new_state = []
 		state.map((item) => {
 			if (item.id != action.id) {
 				new_state.push(item)
@@ -29,4 +29,4 @@ function todosReducer(state = [], action) {
 
 }
 
-export default todosReducer;
+export default reducer;

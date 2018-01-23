@@ -1,4 +1,4 @@
-export default const FilterType = {
+export const FilterType = {
 	ALL: 'ALL',
 	TODO: 'TODO',
 	COMPLETED: 'COMPLETED'

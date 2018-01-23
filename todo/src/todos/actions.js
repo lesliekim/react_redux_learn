@@ -1,4 +1,3 @@
-import React from 'react';
 import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from './actionTypes.js';
 
 let nextTodoId = 0

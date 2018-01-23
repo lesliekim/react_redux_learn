@@ -1,7 +1,7 @@
 import { SET_FILTER } from './actionTypes.js'
-import { FilterType } from './constant.js'
+import { FilterType } from './constants.js'
 
-function filterReducer (state = FilterType.ALL, action) {
+function reducer (state = FilterType.ALL, action) {
 	switch (action.type) {
 		case SET_FILTER:
 			return Object.assign({}, state, {
@@ -12,4 +12,4 @@ function filterReducer (state = FilterType.ALL, action) {
 	}
 }
 
-export default filterReducer;
+export default reducer;
