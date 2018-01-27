@@ -1,9 +1,12 @@
 import React from 'react';
 import { filterTodo } from '../actions.js';
-import { ALL, TODO, COMPLETED } from '../constants.js';
+import { FilterType } from '../../constants.js';
 import { connect } from 'react-redux';
 
 class Filter extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 	render() {
 		return (
 		<div>
@@ -17,14 +20,15 @@ class Filter extends React.Component {
 
 function mapStateToProps(state) {
 	return {
+		filter: state.filter
 	};
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
-		filterAll: () => (dispatch(filterTodo(ALL))),
-		filterTodo: () => (dispatch(filterTodo(TODO))),
-		filterCompleted: () => (dispatch(filterTodo(COMPLETED)))
+		filterAll: () => (dispatch(filterTodo(FilterType.ALL))),
+		filterTodo: () => (dispatch(filterTodo(FilterType.TODO))),
+		filterCompleted: () => (dispatch(filterTodo(FilterType.COMPLETED)))
 
 	};
 }

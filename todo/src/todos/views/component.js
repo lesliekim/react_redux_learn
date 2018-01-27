@@ -15,7 +15,7 @@ class TodoItem extends React.Component {
 	render() {
 		return (<li>
 			<label>
-			<input type="checkbox" checked={this.props.completed} onClick={this.onToggle} />
+			<input type="checkbox" checked={this.props.completed} onChange={this.onToggle} />
 			{ this.props.text }
 			</label>
 			<button onClick={this.onRemove}>x</button>
@@ -31,6 +31,9 @@ class AddTodo extends React.Component {
 	}
 	onAdd() {
 		let text = this.input.value;
+		if (text.trim() === '') {
+			return;
+		}
 		this.props.add(text);
 		this.input.value = '';
 	}

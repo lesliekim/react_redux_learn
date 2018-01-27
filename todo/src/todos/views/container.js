@@ -2,6 +2,7 @@ import React from 'react';
 import * as actions from '../actions';
 import TodoList from './component';
 import { connect } from 'react-redux';
+import { FilterType } from '../../constants.js';
 
 class TodoContainer extends React.Component {
 	constructor(props) {
@@ -12,9 +13,22 @@ class TodoContainer extends React.Component {
 	}
 }
 
+function selectVisibleTodos(todos, filter) {
+	switch(filter) {
+		case FilterType.All:
+			return todos;
+		case FilterType.TODO:
+			return todos.filter((todo) => (todo.completed !== true));
+		case FilterType.COMPLETED:
+			return todos.filter((todo) => (todo.completed === true));
+		default:
+			return todos;
+	}
+}
+
 function mapStateToProps(state) {
 	return {
-		todos: state.todos
+		todos: selectVisibleTodos(state.todos, state.filter)
 	};
 }
 

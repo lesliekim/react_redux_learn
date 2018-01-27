@@ -9,7 +9,7 @@ function reducer(state = [], action) {
 		];
 	case TOGGLE_TODO:
 		return state.map((item) => {
-			if (item.id == action.id) {
+			if (item.id === action.id) {
 				return Object.assign({}, item, { completed: !item.completed });
 			} else {
 				return item
@@ -18,7 +18,7 @@ function reducer(state = [], action) {
 	case REMOVE_TODO:
 		var new_state = []
 		state.map((item) => {
-			if (item.id != action.id) {
+			if (item.id !== action.id) {
 				new_state.push(item)
 			}
 		});
@@ -26,7 +26,6 @@ function reducer(state = [], action) {
 	default:
 		return state;
 	}
-
 }
 
 export default reducer;
