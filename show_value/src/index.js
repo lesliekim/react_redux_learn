@@ -3,10 +3,14 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './reducer';
 import { view as ShowValue } from './show';
+import { view as Button } from './button';
 
 render(
     <Provider store={ store }>
-        <ShowValue />
+        <div>
+            <ShowValue />
+            <Button />
+        </div>
     </Provider>,
     document.getElementById('root')
 );

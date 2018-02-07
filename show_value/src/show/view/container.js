@@ -12,7 +12,7 @@ class ShowContainer extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        value: state.value
+        value: state.show.value
     }
 }
 
