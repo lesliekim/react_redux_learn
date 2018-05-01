@@ -31,13 +31,12 @@ function webpackBuild() {
 
 function webpackWatch() {
     const watchConfig = {
-        ...webpackConfig,
         watchOptions: {
             aggregateTimeout: 300,
             ignored: /node_modules/
         }
     }
-    const compiler = webpack(watchConfig);
+    const compiler = webpack(webpackConfig);
     compiler.watch({}, (err, stats) => {
         if (err) {
             util.log(err);
